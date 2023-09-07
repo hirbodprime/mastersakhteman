@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <!--breadcrumbs area start-->
+    <div class="breadcrumbs_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <ul>
+                            <li><a href="{% url 'HomeView' %}">خانه</a></li>
+                            <li>ورود</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs area end-->
+
+    <!-- customer login start -->
+    <div class="login_page_bg">
+        <div class="container">
+            <div class="customer_login">
+                <div class="row">
+                    <!--login area start-->
+                    <div class="col-lg-6 col-md-6">
+                        <div class="account_form login">
+                            <h2>ورود</h2>
+                            <form action="{% url 'loginview' %}" method="POST">
+                                {% csrf_token %}
+                                {{form.as_p}}
+                                <button type="submit">ورود</button>
+
+                                <!-- </div> -->
+                                <a href="{% url 'registerview' %}" id="something"
+                                style="background: #1B2052;
+                                border: 0;
+                                color: #ffffff;
+                                display: inline-block;
+                                font-size: 12px;
+                                font-weight: 500;
+                                height: 34px;
+                                line-height: 21px;
+                                padding: 5px 20px;
+                                cursor: pointer;
+                                -webkit-transition: 0.3s;
+                                transition: 0.3s;
+                                margin-right: 20px;
+                                border-radius: 20px;">حساب کاربری ندارم</a>
+                            </form>
+                            
+                        </div>
+                    </div>
+                    <!--login area start-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

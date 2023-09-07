@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+    <!--breadcrumbs area start-->
+    <div class="breadcrumbs_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <ul>
+                            <li><a href="{% url 'HomeView' %}">خانه</a></li>
+                            <li>جزئیات تبلیغات</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs area end-->
+
+    <!--blog body area start-->
+    <div class="blog_bg_area">
+        <div class="container">
+            <div class="blog_page_section">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12">
+                        <!--blog grid area start-->
+                        <div class="blog_wrapper blog_details">
+                            {% if b != None %}
+                            
+                            
+                                <article class="single_blog">
+                                    <figure>
+                                        <div class="post_header">
+                                            <h3 class="post_title"> {{b.AdvertisementTitle}}</h3>
+                                            <div class="blog_meta">
+                                                <span class="author">ارسال توسط : {{b.writer}} /</span>
+                                                <span class="meta_date">در: {{b.Advertisement_Created_At}} </span>
+                                            </div>
+                                        </div>
+                                        {% if b.AdvertisementImageMain %}
+                                        <center>
+                                            <div class="blog_thumb">
+                                                <img src="{{b.AdvertisementImageMain.url}}" alt="">
+                                            </div>
+                                        </center>
+                                        {% endif %}
+                                        <figcaption class="blog_content">
+                                            <div class="post_content">
+                                                {% if b.Advertisementquestion1 %}
+                                                <br>
+                                                <hr>
+                                                    <blockquote>
+                                                        <h4>{{b.Advertisementquestion1}}</h4>
+                                                    </blockquote>
+                                                {% endif %}
+                                                <p>{{b.AdvertisementBody1}}</p>
+                                                <br>
+                                                {% if b.AdvertisementImage1 %}
+                                                <center>
+                                                    <!-- <div class="blog_thumb"> -->
+                                                        <img src="{{b.AdvertisementImage1.url}}" alt="">
+                                                    <!-- </div> -->
+                                                </center>
+                                                {% endif %}
+                                            </div>
+                                            <div class="post_content">
+                                                {% if b.Advertisementquestion2 %}
+                                                <br>
+                                                <hr>
+                                                    <blockquote>
+                                                        <h4>{{b.Advertisementquestion2}}</h4>
+                                                    </blockquote>
+                                                {% endif %}
+                                                
+                                                {% if b.BlogBody2 %}
+                                                    <p>{{b.AdvertisementBody2}}</p>
+                                                {% endif %}
+                                                <br>
+                                                {% if b.AdvertisementImage2 %}
+                                                    <center>
+                                                        <img src="{{b.AdvertisementImage2.url}}" alt="">
+                                                    </center>
+                                                {% endif %}
+                                            </div>
+                                            <div class="post_content">
+                                                {% if b.Advertisementquestion3 %}
+                                                <br>
+                                                <hr>
+                                                    <blockquote>
+                                                        <h4>{{b.Advertisementquestion3}}</h4>
+                                                    </blockquote>
+                                                {% endif %}
+                                                {% if b.AdvertisementBody3 %}
+                                                    <p>{{b.AdvertisementBody3}}</p>
+                                                {% endif %}
+                                                <br>
+                                                {% if b.AdvertisementImage3 %}
+                                                    <center>
+                                                        <img src="{{b.AdvertisementImage3.url}}" alt="">
+                                                    </center>
+                                                {% endif %}
+                                            </div>
+                                    <!-- شسیشسی -->
+                                            <div class="post_content">
+                                                {% if b.Advertisementquestion4 %}
+                                                <br>
+                                                <hr>
+                                                    <blockquote>
+                                                        <h4>{{b.Advertisementquestion4}}</h4>
+                                                    </blockquote>
+                                                {% endif %}
+                                                {% if b.AdvertisementBody4 %}
+                                                    <p>{{b.AdvertisementBody4}}</p>
+                                                {% endif %}
+                                                <br>
+                                                {% if b.AdvertisementImage4 %}
+                                                    <center>
+                                                        <img src="{{b.AdvertisementImage4.url}}" alt="">
+                                                    </center>
+                                                {% endif %}
+                                            </div>
+                                            <div class="post_content">
+                                                {% if b.Advertisementquestion5 %}
+                                                <br>
+                                                <hr>
+                                                    <blockquote>
+                                                        <h4>{{b.Advertisementquestion5}}</h4>
+                                                    </blockquote>
+                                                {% endif %}
+                                                {% if b.AdvertisementBody5 %}
+                                                    <p>{{b.AdvertisementBody5}}</p>
+                                                {% endif %}
+                                                <br>
+                                                {% if b.AdvertisementImage5 %}
+                                                    <center>
+                                                        <img src="{{b.AdvertisementImage5.url}}" alt="">
+                                                    </center>
+                                                {% endif %}
+                                            </div>
+                                            <div class="post_content">
+                                                {% if b.Advertisementquote %}
+                                                    <blockquote>
+                                                        <p>{{b.AdvertisementAdvertisementquote}}</p>
+                                                    </blockquote>
+                                                {% endif %}
+                                            </div>
+                                            <div class="entry_content">
+                                                {% if tags %}
+                                                <div class="post_meta">
+                                            
+                                                    <span>برچسب ها : </span>
+                                                    {% for tag in tags %}
+                                                        <span> 
+                                                            <a href="{% url 'blogview_tag' tag.slug %}" style="color: rgb(25, 25, 25);" class="link-light text-decoration-none badge bg-secondary">
+                                                                {{tag.name}} 
+                                                            </a>
+                                                        </span>
+                                                    {% endfor %}
+                                                </div>
+                                                {% endif %}
+                                                
+                                            </div>
+                                            
+                                        </figcaption>
+                                    </figure>
+                                </article>
+                            {% endif %}
+                            {% for c in com %}
+                            <div class="comments_box">
+                                <h3>دیدگاه </h3>
+                                <div class="comment_list">
+                                    <div class="comment_thumb">
+                                        <img src="{% static 'img/blog/comment3.png.jpg'%}" alt="">
+                                    </div>
+                                    <div class="comment_content">
+                                        <div class="comment_meta">
+                                            <h5><a href="#">{{c.name}}</a></h5>
+                                            <span>{{c.commentPosted_Date}}</span>
+                                        </div>
+                                        <p>{{c.content}}</p>
+                                       
+                                    </div>
+                                </div>
+                            
+                            </div>
+                            {% endfor %}
+                            {% if b != None %}
+                            <div class="comments_form">
+                                <h4><a href="{% url 'commentview' b.Slug %}">ارسال دیدگاه</a></h4>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <!--blog grid area start-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--blog section area end-->
+{% endblock body %}

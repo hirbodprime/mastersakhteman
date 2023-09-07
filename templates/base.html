@@ -1,0 +1,526 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="fa" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>مسترساختمان</title>
+    {% comment %} {% static 'img/favicon.ico'%} {% endcomment %}
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/categoriespics/logo1.png'%}">
+	<meta name="theme-color" content="#c40316">
+    <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    {%block linkjs%}{%endblock linkjs%}
+    {%block linkcss%}{%endblock linkcss%}
+    
+    <link rel="stylesheet" href="{% static 'css/plugins.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    
+</head>
+
+<body >
+    
+    <!--Offcanvas menu area start-->
+    <div class="off_canvars_overlay"></div>
+    <div class="Offcanvas_menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="canvas_open">
+                        <a href="javascript:void(0)"><i class="ion-navicon"></i></a>
+                    </div>
+                    <div class="Offcanvas_menu_wrapper">
+                        <div class="canvas_close">
+                            <a href="javascript:void(0)"><i class="ion-android-close"></i></a>
+                        </div>
+                        <div class="antomi_message">
+                            <p>ارسال رایگان - ضمانت بازگشت وجه 30 روزه</p>
+                        </div>
+                        <div class="header_top_settings text-right">
+                            <ul>
+                                <!-- <li><a href="{% url 'com' %}">پیگیری سفارش</a></li> -->
+                                <li>تلفن تماس: <a class="ltr-text" href="tel:+(+98)9121989487">(+98) 912 198 9487 </a></li>
+                                <li>ضمانت کیفیت محصولات</li>
+                            </ul>
+                        </div>
+                        <div class="header_configure_area">
+                            <div class="header_wishlist">
+                                <a href="{% url 'blogview' %}"><i class="fa fa-book"></i>
+                            </div>
+                            <div class="mini_cart_wrapper">
+                                <a href="{% url 'ShopView' %}">
+                                    <i class="fa fa-shopping-bag"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="search_container">
+                            <form action="{% url 'search_results' %}" method="get">
+                                <div class="search_box">
+                                    <input placeholder="جستجوی محصول ..." name="result" type="text">
+                                    <button type="submit">جستجو</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="menu" class="text-left ">
+                            <ul class="offcanvas_main_menu">
+                                <li class="menu-item-has-children active">
+                                    <a href="{% url 'HomeView' %}">خانه</a></li>
+                                <li class="menu-item-has-children">
+                                    <a href="{% url 'ShopView' %}">فروشگاه</a>
+                                    {% comment %} <ul class="sub-menu">
+                                        <li class="menu-item-has-children">
+                                            <a href="#">طرح های فروشگاه</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="shop.html">فروشگاه</a></li>
+                                                <li><a href="shop-fullwidth.html">تمام عرض</a></li>
+                                                <li><a href="shop-fullwidth-list.html">تمام عرض لیست</a></li>
+                                                <li><a href="shop-left-sidebar.html">نوار کناری چپ </a></li>
+                                                <li><a href="shop-left-sidebar-list.html"> نوار کناری چپ لیست</a></li>
+                                                <li><a href="shop-list.html">نمایش لیست</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <a href="#">سایر صفحات</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="{% url 'com' %}">پرداخت</a></li>                             
+                                            </ul>
+                                        </li>
+                                    </ul> {% endcomment %}
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="{% url 'blogview' %}">مجله</a>
+                                </li>
+                                {% comment %} <li class="menu-item-has-children">
+                                    <a href="#">صفحات </a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{% url 'aboutview' %}">درباره ما</a></li>
+                                        <li><a href="{% url 'faq' %}">سوالات متداول</a></li>
+                                        <li><a href="{% url 'contactview' %}">تماس</a></li>
+                                    </ul>
+                                </li> {% endcomment %}
+
+                                <li class="menu-item-has-children">
+                                    <a href="{% url 'aboutview' %}">درباره ما</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="{% url 'contactview' %}"> تماس با ما</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="{% url 'advertisementview' %}"> تبلیغات</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="{% url 'workwithus' %}"> همکاری با ما</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="Offcanvas_footer"> 
+                            {% comment %} i wil be back {% endcomment %}
+                            <span><a href="#"><i class="fa fa-envelope-o"></i> info@mastersakhteman.com</a></span>
+                            <ul>
+                                <li class="facebook"><a href="https://www.facebook.com/profile.php?id=100078276889687"><i class="fa fa-facebook"></i></a></li>
+                                <li class="twitter"><a href="https://twitter.com/mastersakhteman"><i class="fa fa-twitter"></i></a></li>
+                                <li class="pinterest"><a href="https://wa.me/message/OPTJ7AW7M7MOC1"><i class="fa fa-whatsapp"></i></a></li>
+                                <li class="google-plus"><a href="https://instagram.com/mastersakhteman"><i class="fa fa-instagram"></i></a></li>
+                                <li class="linkedin"><a href="https://t.me/Mastersakhteman"><i class="fa fa-telegram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Offcanvas menu area end-->
+    <!--header area start-->
+    <header>
+        <div class="main_header">
+            <div class="container">
+                <!--header top start-->
+                <div class="header_top">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 col-md-5">
+                            <div class="antomi_message">
+                                <p>بزرگترین فروشگاه لوازم خانگی</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-7">
+                            <div class="header_top_settings text-right">
+                                <ul>
+                                    <li><a href="{% url 'blogview' %}">مجله مسترساختمان</a></li>
+                                    <!-- <li><a href="{% url 'com' %}">پیگیری سفارش</a></li> -->
+                                    <li>تلفن تماس: <a class="ltr-text" href="tel:+(+98)9121989487">(+98)912 198 9487 </a></li>
+                                    <li>ضمانت کیفیت محصولات</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--header top start-->
+
+                <!--header middel start-->
+                <div class="header_middle sticky-header">
+                    <div class="row align-items-center">
+                        <div class="col-lg-2 col-md-6">
+                            <div class="logo">
+                                <a href="{% url 'HomeView' %}"><img src="{% static 'img/categoriespics/logo3.png'%}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-12">
+                            <div class="main_menu menu_position text-center">
+                                <nav>
+                                    <ul>
+                                        <li><a href="{% url 'HomeView' %}">خانه<i class="fa"></i></a>
+                                        </li>
+                                        {% comment %}  fa-angle-down {% endcomment %}
+                                        <li class="mega_items"><a href="{% url 'ShopView' %}">فروشگاه<i class="fa"></i></a>
+                                            {% comment %}
+                                            <div class="mega_menu">
+                                                 <ul class="mega_menu_inner">
+                                                    <li><a href="#">طرح های فروشگاه</a>
+                                                        <ul>
+                                                            <li><a href="shop-fullwidth.html">تمام عرض</a></li>
+                                                            <li><a href="shop-fullwidth-list.html">تمام عرض لیست</a></li>
+                                                            <li><a href="shop-left-sidebar.html">نوار کناری چپ </a></li>
+                                                            <li><a href="shop-left-sidebar-list.html"> نوار کناری چپ لیست</a></li>
+                                                            <li><a href="shop-list.html">نمایش لیست</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">سایر صفحات</a>
+                                                        <ul>
+                                                            <li><a href="">سبد خرید</a></li>
+                                                            <li><a href="{% url 'com' %}">پرداخت</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">انواع محصول</a>
+                                                        <ul>
+                                                            <li><a href="product-details.html">جزئیات محصول</a></li>
+                                                            <li><a href="product-sidebar.html">محصول با نوار کناری</a></li>
+                                                            <li><a href="product-grouped.html">محصول گروهبندی شده</a></li>
+                                                            <li><a href="variable-product.html">محصول متغیر</a></li>
+                                                            <li><a href="product-countdown.html">محصول شمارنده</a></li>
+
+                                                        </ul>
+                                                    </li>
+                                                </ul> 
+                                            </div>
+                                            {% endcomment %}
+                                        </li>
+                                        <li><a href="{% url 'blogview' %}">مجله<i class="fa"></i></a>
+                                            {% comment %} <ul class="sub_menu pages">
+                                                <li><a href="blog-details.html">جزئیات مطلب بلاگ</a></li>
+                                                <li><a href="blog-fullwidth.html">بلاگ تمام عرض</a></li>
+                                                <li><a href="blog-right-sidebar.html">نوار کناری راست</a></li>
+                                                <li><a href="blog-no-sidebar.html">بلاگ بدون نوار کناری</a></li>
+                                            </ul> {% endcomment %}
+                                        </li>
+                                        <li><a href="{% url 'HomeView' %}">صفحات <i class="fa fa-angle-down"></i></a>
+                                            <ul class="sub_menu pages">
+                                                <li><a href="{% url 'aboutview' %}">درباره ما</a></li>
+                                                <li><a href="{% url 'faq' %}">سوالات متداول</a></li>
+                                                <li><a href="{% url 'contactview' %}">تماس</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li><a href="{% url 'aboutview' %}">درباره ما</a></li>
+                                        <li><a href="{% url 'contactview' %}"> تماس با ما</a></li>
+                                        <li>
+                                            <a href="{% url 'advertisementview' %}"> تبلیغات</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'workwithus' %}"> همکاری با ما</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="header_configure_area">
+                                <div class="header_wishlist">                              
+                                    <a href="{% url 'blogview' %}"><i class="fa fa-book"></i>
+                                        <!-- <span class="wishlist_count"></span>  -->
+                                    </a>
+                                </div>
+                                <div class="mini_cart_wrapper">
+                                    <a href="{% url 'ShopView' %}">
+                                        <i class="fa fa-shopping-bag"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--header middel end-->
+
+                <!--header bottom satrt-->
+                <div class="header_bottom">
+                    <div class="row align-items-center">
+                        <div class="column1 col-lg-3 col-md-6">
+                            <div class="categories_menu categories_three">
+                                <div class="categories_title">
+                                    <h2 class="categori_toggle">دسته بندی ها</h2>
+                                </div>
+                                <div class="categories_menu_toggle">
+                                    <ul>
+                                        {% for c in cat %}
+                                            <li class="menu_item_children">
+                                                <a href="{% url 'ProShopView2' c.url_name %}">{{ c.name }} <i class="fa fa-angle-left"></i></a>
+                                                <ul class="categories_mega_menu">   
+                                                    {% for s in sub %}
+                                                        {% if s.parent.url_name == c.url_name %}
+                                                            <li class="menu_item_children">
+                                                                <a href="{% url 'subcategoryviewname' c.url_name s.url_name %}">{{ s.name }}</a>
+                                                                <ul class="categorie_sub_menu">
+                                                                    {% for ss in subsub %}
+                                                                        {% if ss.parent.url_name == s.url_name %}
+                                                                        
+                                                                            <li><a href="{% url 'subsubcategoryviewname' c.url_name s.url_name ss.url_name %}">{{ ss.name }}</a></li>
+                                                                        {% endif %}
+                                                                    {% endfor %}
+                                                                </ul>  
+                                                            </li>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </ul>
+                                            </li>  
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                
+
+
+                            </div>
+                        </div>
+                        <div class="column2 col-lg-6 ">
+                            <div class="search_container">
+                                <form action="{% url 'search_results' %}" method="get">
+                                    <div class="search_box">
+                                        <input placeholder="جستجوی محصول ..." name="result" type="text">
+                                        <button type="submit">جستجو</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="column3 col-lg-3 col-md-6">
+                            <div class="header_bigsale">
+                            <!-- comeback -->
+                                <a style="background-color: #1B2052;" href="{% url 'ShopView' %}">فروشگاه</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--header bottom end-->
+            </div>
+        </div>
+    </header>
+    <!--header area end-->
+    {% block body %}{% endblock body %}
+
+    
+    <!--footer area start-->
+    <footer class="footer_widgets">
+        <!--newsletter area start-->
+        
+        <!--newsletter area end-->
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    {% comment %} <div class="col-lg-3 col-md-5 col-sm-7">
+                        <div class="widgets_container contact_us">
+                            <h3>دریافت برنامه</h3>
+                            <div class="aff_content">
+                                <p>برنامه <strong>آنتومی</strong> هم اکنون در گوگل پلی و اپل استور آماده دریافت است.</p>
+                            </div>
+                            <div class="app_img">
+                                <figure class="app_img">
+                                    <a href="#"><img src="{% static 'img/icon/icon-appstore.png'%}" alt=""></a>
+                                </figure>
+                                <figure class="app_img">
+                                    <a href="#"><img src="{% static 'img/icon/icon-googleplay.png'%}" alt=""></a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+                    <div class="col-lg-2 col-md-3 col-sm-5">
+                        <div class="widgets_container widget_menu">
+                            <h3>اطلاعات</h3>
+                            <div class="footer_menu">
+                                <ul>
+                                    <li><a href="{% url 'aboutview' %}">درباره ما</a></li>
+                                    <li><a href="{% url 'contactview' %}">تماس با ما</a></li>
+                                    <li><a href="{% url 'com' %}">ویژه ها</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="widgets_container widget_menu">
+                            <h3>حساب کاربری</h3>
+                            <div class="footer_menu">
+                                <ul>
+                                    <li><a href="{% url 'com' %}">سفارشات بین المللی</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-lg-2 col-md-5 col-sm-6">
+                        <div class="widgets_container widget_menu">
+                            <h3>خدمات مشتری</h3>
+                            <div class="footer_menu">
+                                <ul>
+                                    <li><a href="{% url 'ShopView' %}">فروشگاه </a></li>
+                                    <li><a href="{% url 'blogview' %}">مجله مسترساختمان</a></li> 
+                                    <li><a href="{% url 'com' %}">سابقه خرید</a></li> 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-7 col-sm-12">
+                        <div class="widgets_container">
+                            <h3>اطلاعات تماس</h3>
+                            <div class="footer_contact">
+                                <div class="footer_contact_inner">
+                                    <div class="contact_icone">
+                                        <img src="{% static 'img/icon/icon-phone.png'%}" alt="">
+                                    </div>
+                                    <div class="contact_text">
+                                        <p>تلفن تماس 24 ساعته: <br> <strong class="ltr-text">(+98) 912 198 9487</strong></p>
+                                    </div>
+                                </div>
+                                {% comment %} <p>تبریز، چهار راه آبرسان، فلکه دانشگاه، برج تجاری بلور، طبقه 456، واحد 45</p> {% endcomment %}
+                            </div>
+
+                            <div class="footer_social">
+                                <ul>
+                                    <li><a class="facebook" href="https://www.facebook.com/profile.php?id=100078276889687" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a class="twitter" href="https://twitter.com/mastersakhteman" target="_blank"><i  class="fa fa-twitter"></i></a></li>
+                                    <li><a class="instagram" href="https://instagram.com/mastersakhteman" target="_blank"><i  class="fa fa-instagram"></i></a></li>
+                                    <li><a class="linkedin" href="https://wa.me/message/OPTJ7AW7M7MOC1" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+                                    <li><a class="facebook" href="https://youtube.com/channel/UCWzwNlakv-fulA_q746GixQ" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </footer>
+    <!--footer area end-->
+
+    <!-- modal area start-->
+    {% comment %} <div class="modal fade" id="modal_box" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <div class="modal_body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-5 col-sm-12">
+                                <div class="modal_tab">
+                                    <div class="tab-content product-details-large">
+                                        <div class="tab-pane fade show active" id="tab1" role="tabpanel">
+                                            <div class="modal_tab_img">
+                                                <a href="#"><img src="{% static 'img/product/productbig2.jpg'%}" alt=""></a>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="tab2" role="tabpanel">
+                                            <div class="modal_tab_img">
+                                                <a href="#"><img src="{% static 'img/product/productbig3.jpg'%}" alt=""></a>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="tab3" role="tabpanel">
+                                            <div class="modal_tab_img">
+                                                <a href="#"><img src="{% static 'img/product/productbig4.jpg'%}" alt=""></a>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="tab4" role="tabpanel">
+                                            <div class="modal_tab_img">
+                                                <a href="#"><img src="{% static 'img/product/productbig5.jpg'%}" alt=""></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal_tab_button">
+                                        <ul class="nav product_navactive owl-carousel" role="tablist">
+                                            <li>
+                                                <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="false"><img src="{% static 'img/product/product1.jpg'%}" alt=""></a>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false"><img src="{% static 'img/product/product6.jpg'%}" alt=""></a>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link button_three" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false"><img src="{% static 'img/product/product9.jpg'%}" alt=""></a>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link" data-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false"><img src="{% static 'img/product/product14.jpg'%}" alt=""></a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-12">
+                                <div class="modal_right">
+                                    <div class="modal_title mb-10">
+                                        <h2>گوشی هوشمند سامسونگ A50</h2>
+                                    </div>
+                                    <div class="modal_price mb-10">
+                                        <span class="new_price">64,000 تومان</span>
+                                        <span class="old_price">78,000 تومان</span>
+                                    </div>
+                                    <div class="modal_description mb-15">
+                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای </p>
+                                    </div>
+                                    <div class="variants_selects">
+                                        <div class="variants_size">
+                                            <h2>اندازه</h2>
+                                            <select class="select_option">
+                                                <option selected value="1">کوچک</option>
+                                                <option value="1">متوسط</option>
+                                                <option value="1">بزرگ</option>
+                                                <option value="1">XL</option>
+                                                <option value="1">XXL</option>
+                                            </select>
+                                        </div>
+                                        <div class="variants_color">
+                                            <h2>رنگ</h2>
+                                            <select class="select_option">
+                                                <option selected value="1">بنفش</option>
+                                                <option value="1">اطلسی</option>
+                                                <option value="1">مشکی</option>
+                                                <option value="1">صورتی</option>
+                                                <option value="1">نارنجی</option>
+                                            </select>
+                                        </div>
+                                        <div class="modal_add_to_cart">
+                                            <form action="#">
+                                                <input min="1" max="100" step="2" value="1" type="number">
+                                                <button type="submit">افزودن به سبد</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal_social">
+                                        <h2>اشتراک گذاری این محصول</h2>
+                                        <ul>
+                                            <li class="facebook"><a href="https://www.facebook.com/profile.php?id=100078276889687" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                            <li class="twitter"><a href="https://twitter.com/mastersakhteman" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> {% endcomment %}
+
+    <script src="{% static 'js/plugins.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+</body>
+
+</html>

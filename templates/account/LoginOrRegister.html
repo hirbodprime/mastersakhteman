@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block linkcss%}
+<link rel="stylesheet" href="{% static 'css/csscustom/logorregister.css' %}">
+{%endblock linkcss%}
+{% block body %}
+<!--breadcrumbs area start-->
+<div class="breadcrumbs_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb_content">
+                    <ul>
+                        <li><a href="{% url 'HomeView' %}">خانه</a></li>
+                        <li>حساب کاربری</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--breadcrumbs area end-->
+<div class="login_page_bg">
+    <div class="container">
+        <div class="customer_login">
+            <div class="row">
+                <ul class="ule">
+                    <li class="lie">
+                        <a class="liea" href="{% url 'loginview' %}">  ورود </a>   
+                    </li>
+                    <li class="lie">
+                        <a class="liea" href="{% url 'registerview' %}"> ثبت نام </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock body %}

@@ -1,0 +1,33 @@
+
+
+.lie{
+    border:3px solid #1B2052;
+    border-radius: 8px;
+    position: relative;
+    float: right;
+    padding:10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-shadow: 5px 5px 10px 5px #1B2052;
+}
+
+.liea:hover{
+    color: #1B2052;
+    font-weight: 600;
+}
+.ule{
+    margin-right: 150px;
+    margin-top: 20px;
+}
+.lie:hover{
+    transition-timing-function: ease;
+    transition: box-shadow 1s;
+    box-shadow: 4px 4px 9px 4px ;
+}
+.ule:hover{
+    cursor: pointer;
+    
+}
+.lie:last-child{
+
+    margin-right: 20px;
+}
